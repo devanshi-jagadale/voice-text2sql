@@ -15,8 +15,8 @@ Schema:
 Convert this to a valid PostgreSQL query: {nl_query}
 
 Rules:
-- Use ILIKE instead of LIKE for text comparisons
-- Use LOWER() on both sides for equality checks on text columns
+- Use ILIKE with wildcards for ALL text comparisons e.g. city ILIKE '%bangalore%', department ILIKE '%engineer%'
+- Never use exact equality on text columns
 - Do NOT add extra filter conditions that weren't asked for
 - Return only the SQL query, nothing else. No markdown, no explanation."""
 
