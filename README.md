@@ -1,6 +1,6 @@
 # VoiceQuery — Natural Language Analytics for Your Database
 
-Ask questions about your database by voice or text. VoiceQuery transcribes speech, generates SQL, self-heals on failure, and proactively surfaces insights you didn't ask for.
+Ask questions about your database by voice or text. VoiceQuery transcribes speech, generates SQL, self-heals on failure, and proactively surfaces insights.
 
 ## Demo
 
