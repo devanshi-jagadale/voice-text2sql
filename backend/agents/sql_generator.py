@@ -16,7 +16,8 @@ Convert this to a valid PostgreSQL query: {nl_query}
 
 Rules:
 - Use ILIKE instead of LIKE for text comparisons
-- Use LOWER() on both sides for equality checks on text columns e.g. LOWER(department) = LOWER('Engineering')
+- Use LOWER() on both sides for equality checks on text columns
+- Do NOT add extra filter conditions that weren't asked for
 - Return only the SQL query, nothing else. No markdown, no explanation."""
 
     response = client.chat.completions.create(
