@@ -14,3 +14,4 @@ class AgentState(TypedDict):
     retry_count: int
     explanation: Optional[str]
     needs_viz: Optional[bool]
+    insights: Optional[str]

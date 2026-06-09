@@ -39,6 +39,7 @@ async def query_text(payload: dict):
         "retry_count": 0,
         "explanation": None,
         "needs_viz": None,
+        "insights": None
     }
 
     result = graph.invoke(initial_state)
@@ -67,6 +68,7 @@ async def query_text(payload: dict):
         "is_ambiguous": result.get("is_ambiguous"),
         "clarifying_question": result.get("clarifying_question"),
         "error": result.get("error_message"),
+        "insights": result.get("insights")
     }
 
 @app.post("/query-voice")
@@ -93,6 +95,7 @@ async def query_voice(audio: UploadFile = File(...)):
             "retry_count": 0,
             "explanation": None,
             "needs_viz": None,
+            "insights": None
         }
 
         result = graph.invoke(initial_state)
@@ -120,6 +123,7 @@ async def query_voice(audio: UploadFile = File(...)):
             "is_ambiguous": result.get("is_ambiguous"),
             "clarifying_question": result.get("clarifying_question"),
             "error": result.get("error_message"),
+            "insights": result.get("insights")
         }
     finally:
         os.unlink(tmp_path)

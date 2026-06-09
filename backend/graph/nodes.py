@@ -7,6 +7,7 @@ from agents.explainer import explain_result
 from agents.viz_decider import decide_viz
 from db.metadata import get_schema_context
 from graph.state import AgentState
+from agents.insight_agent import generate_insights
 
 def transcription_node(state: AgentState) -> AgentState:
     text = transcribe_audio(state["audio_path"])
@@ -59,6 +60,11 @@ def healer_node(state: AgentState) -> AgentState:
 def explainer_node(state: AgentState) -> AgentState:
     explanation = explain_result(state["final_query"], state["execution_result"])
     return {**state, "explanation": explanation}
+
+
+def insight_node(state: AgentState) -> AgentState:
+    insights = generate_insights(state["final_query"], state["execution_result"])
+    return {**state, "insights": insights}
 
 def viz_decider_node(state: AgentState) -> AgentState:
     needs_viz = decide_viz(state["execution_result"])

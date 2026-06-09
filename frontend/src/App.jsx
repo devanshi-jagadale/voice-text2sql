@@ -146,6 +146,12 @@ export default function App() {
               <p style={{ margin: 0, fontSize: 15 }}>{result.explanation}</p>
             </div>
           )}
+          {result.insights && (
+            <div style={{ background: "#f0fff4", border: "1px solid #86efac", borderRadius: 8, padding: 16 }}>
+              <p style={{ color: "#166534", fontSize: 12, margin: "0 0 8px", fontWeight: 600 }}>💡 INSIGHTS</p>
+              <p style={{ margin: 0, fontSize: 15, color: "#166534" }}>{result.insights}</p>
+            </div>
+          )}
           {result.chart_url && (
             <div style={{ borderRadius: 8, overflow: "hidden", border: "1px solid #eee" }}>
               <img src={`${API}${result.chart_url}`} alt="chart" style={{ width: "100%" }} />
