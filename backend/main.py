@@ -6,6 +6,8 @@ from agents.chart_generator import generate_chart
 from db.history import save_history, get_history
 import tempfile, os
 
+os.makedirs("static/images", exist_ok=True)
+
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
