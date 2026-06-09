@@ -11,7 +11,8 @@ os.makedirs("static/images", exist_ok=True)
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://voice-text2sql.vercel.app/", "http://localhost:5173"],
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
